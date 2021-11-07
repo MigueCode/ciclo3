@@ -32,4 +32,36 @@ public class BoatService {
             } else return boat;
         }
     }
+
+    public Boat update(Boat boat){
+        if(boat.getId()!=null){
+            Optional<Boat> e = boatRepository.getBoat(boat.getId());
+            if(!e.isEmpty()){
+                if(boat.getName()!=null){
+                    e.get().setName(boat.getName());
+                }
+                if(boat.getBrand()!=null){
+                    e.get().setBrand(boat.getBrand());
+                }
+                if(boat.getYear()!=null){
+                    e.get().setYear(boat.getYear());
+                }
+                if(boat.getDescription()!=null){
+                    e.get().setDescription(boat.getDescription());
+                }
+                if(boat.getCategory()!=null){
+                    e.get().setCategory(boat.getCategory());
+                }
+                boatRepository.save(e.get());
+                return e.get();
+            }else{
+                return boat;
+            }
+        }else{
+            return boat;
+        }
+    }
+
+    
+
 }
