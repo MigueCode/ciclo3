@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @Repository
 public class BoatRepository {
+    
     @Autowired
     private BoatCrudRepository boatCrudRepository;
 
@@ -23,5 +24,9 @@ public class BoatRepository {
 
     public Boat save(Boat boat){
         return boatCrudRepository.save(boat);
+    }
+    
+    public void delete(Boat boat){
+        boatCrudRepository.delete(boat);
     }
 }
