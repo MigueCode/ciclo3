@@ -25,4 +25,52 @@ public class Reservation {
     @JoinColumn(name = "idClient")
     @JsonIgnoreProperties("reservations")
     private Client client;
+
+    public Integer getIdReservation() {
+        return idReservation;
+    }
+
+    public void setIdReservation(Integer idReservation) {
+        this.idReservation = idReservation;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Date getDevolutionDate() {
+        return devolutionDate;
+    }
+
+    public void setDevolutionDate(Date devolutionDate) {
+        this.devolutionDate = devolutionDate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Boat getBoat() {
+        return boat;
+    }
+
+    public void setBoat(Boat boat) {
+        this.boat = boat;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
 }
