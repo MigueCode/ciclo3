@@ -19,7 +19,7 @@ public class Boat implements Serializable {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "idCategory")
     @JsonIgnoreProperties("boats")
     private Category category;
 

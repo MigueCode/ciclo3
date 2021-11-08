@@ -2,26 +2,26 @@ package com.ciclo3.ciclo3.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "message")
-public class Message {
+public class Message implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idMessage;
     private String messageText;
 
     @ManyToOne
     @JoinColumn(name = "id")
-    @JsonIgnoreProperties("messages")
+    @JsonIgnoreProperties({"messages","reservations","client"})
     private Boat boat;
 
     @ManyToOne
     @JoinColumn(name = "idClient")
-    @JsonIgnoreProperties("messages")
+    @JsonIgnoreProperties({"messages","reservations","client"})
     private Client client;
 
     public Integer getIdMessage() {

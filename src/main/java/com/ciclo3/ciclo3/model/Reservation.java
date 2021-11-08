@@ -3,11 +3,12 @@ package com.ciclo3.ciclo3.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table
-public class Reservation {
+@Table(name = "reservation")
+public class Reservation implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +24,7 @@ public class Reservation {
 
     @ManyToOne
     @JoinColumn(name = "idClient")
-    @JsonIgnoreProperties("reservations")
+    @JsonIgnoreProperties({"reservations","messages"})
     private Client client;
 
     public Integer getIdReservation() {
