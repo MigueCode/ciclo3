@@ -46,6 +46,9 @@ public class BoatService {
                 if (boat.getDescription() != null){
                     auxBoat.get().setDescription(boat.getDescription());
                 }
+                if (boat.getYear() != null){
+                    auxBoat.get().setYear(boat.getYear());
+                }
 
                 return boatRepository.save(auxBoat.get());
             }
