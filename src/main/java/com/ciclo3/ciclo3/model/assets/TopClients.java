@@ -1,15 +1,15 @@
 package com.ciclo3.ciclo3.model.assets;
 
-import com.ciclo3.ciclo3.model.Reservation;
+import com.ciclo3.ciclo3.model.Client;
 
 public class TopClients {
 
     private Long count;
-    private Reservation reservation;
+    private Client client;
 
-    public TopClients(Long count, Reservation reservation) {
+    public TopClients(Long count, Client client) {
         this.count = count;
-        this.reservation = reservation;
+        this.client = client;
     }
 
     public Long getCount() {
@@ -20,11 +20,11 @@ public class TopClients {
         this.count = count;
     }
 
-    public Reservation getReservation() {
-        return reservation;
+    public Client getClient() {
+        return client;
     }
 
-    public void setReservation(Reservation reservation) {
-        this.reservation = reservation;
+    public void setClient(Client client) {
+        this.client = client;
     }
 }

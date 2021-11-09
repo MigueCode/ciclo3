@@ -1,5 +1,6 @@
 package com.ciclo3.ciclo3.repository;
 
+import com.ciclo3.ciclo3.model.Client;
 import com.ciclo3.ciclo3.model.Reservation;
 import com.ciclo3.ciclo3.model.assets.TopClients;
 import com.ciclo3.ciclo3.repository.crud.ReservationCrudRepository;
@@ -47,7 +48,7 @@ public class ReservationRepository {
         List<Object[]> report = reservationCrudRepository.countTotalReservationByClient();
 
         for (Integer i = 0; i < report.size(); i ++){
-            result.add(new TopClients((Long) report.get(i)[1], (Reservation) report.get(i)[0]));
+            result.add(new TopClients((Long) report.get(i)[1], (Client) report.get(i)[0]));
         }
 
 
