@@ -4,20 +4,20 @@ import com.ciclo3.ciclo3.model.Client;
 
 public class TopClients {
 
-    private Long count;
+    private Long total;
     private Client client;
 
-    public TopClients(Long count, Client client) {
-        this.count = count;
+    public TopClients(Long total, Client client) {
+        this.total = total;
         this.client = client;
     }
 
-    public Long getCount() {
-        return count;
+    public Long getTotal() {
+        return total;
     }
 
-    public void setCount(Long count) {
-        this.count = count;
+    public void setTotal(Long total) {
+        this.total = total;
     }
 
     public Client getClient() {
