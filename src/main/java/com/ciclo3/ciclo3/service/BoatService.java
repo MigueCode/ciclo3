@@ -32,4 +32,34 @@ public class BoatService {
             } else return boat;
         }
     }
+
+    public Boat update(Boat boat){
+        if (boat.getId() != null){
+            Optional<Boat> auxBoat = boatRepository.getBoat(boat.getId());
+            if (auxBoat.isPresent()){
+                if (boat.getName() != null){
+                    auxBoat.get().setName(boat.getName());
+                }
+                if (boat.getBrand() != null){
+                    auxBoat.get().setBrand(boat.getBrand());
+                }
+                if (boat.getDescription() != null){
+                    auxBoat.get().setDescription(boat.getDescription());
+                }
+
+                return boatRepository.save(auxBoat.get());
+            }
+        }
+
+        return boat;
+    }
+
+    public boolean delete(Integer id){
+        Optional<Boat> boatAux = boatRepository.getBoat(id);
+        if (boatAux.isPresent()){
+            boatRepository.delete(boatAux.get());
+            return true;
+        }
+        return false;
+    }
 }
